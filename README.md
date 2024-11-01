@@ -1,8 +1,5 @@
-# wish
-Wish CodeBase &amp; Other
+To use the Wish bot, start by installing all the dependencies listed in utils/imports.py. Once that's set up, go to utils/token.py and paste in your bot token. You can learn more about Wish by exploring the codebase or simply by using the bot.
 
+Wish is a public, verified bot and can be run across multiple servers.
 
-If you want to use this bot, you have to install pretty everything from utils/imports.py
-
-after that, just go to utils/token.py and paste ur token there, you can learn about wish by viewing codebase or just using it, you can run wish on many servers, cuz
-wish was a public verified bot
+Note: The code for Wish was made public after I decided I no longer wanted to maintain it.
