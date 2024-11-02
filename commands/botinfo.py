@@ -18,7 +18,7 @@ class BotInfo(commands.Cog):
         embed.add_field(name="<:info:1247959011605741579> Server Count", value=f"Wish is in {server_count} servers")
         embed.add_field(name="<:members:1245656464778068039> Members Count", value=f"Wish watches over {member_count} members")
         embed.add_field(name="<:6300pingconnection:1248350905800327250> Latency", value=f"My response time is: {latency}")
-        embed.add_field(name="<:members:1245656464778068039> Creators", value=f"Wish is being hosted by [MythicalShop.pl](https://discord.gg/Zh9dMxqKcu) and programed by <@1122846756124774470>")
+        embed.add_field(name="<:members:1245656464778068039> Creators", value=f"Wish was being programed by <@1122846756124774470>")
         embed.add_field(name="<:8859discordrolesfromvega:1248350895347863624> Discord Server", value="[Support Server](https://discord.gg/B3jZpkAuYB)", inline=False)
         embed.add_field(name="<:1626onlineweb:1248350904051302450> Website", value="[Wish Website](https://wishbot.xyz)", inline=True)
         await interaction.response.send_message(embed=embed, ephemeral=True)
