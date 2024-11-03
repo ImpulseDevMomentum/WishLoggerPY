@@ -16,7 +16,6 @@ class ModerationChangeWarnReason(commands.Cog):
             conn = sqlite3.connect('warns.db')
             c = conn.cursor()
             
-            # Get the current reason
             c.execute("SELECT Reason FROM warns WHERE ServerID = ? AND UserID = ? AND CaseID = ?", 
                       (interaction.guild.id, member.id, case_id))
             old_reason_row = c.fetchone()
@@ -24,7 +23,6 @@ class ModerationChangeWarnReason(commands.Cog):
             if old_reason_row:
                 old_reason = old_reason_row[0]
                 
-                # Update the reason
                 c.execute("UPDATE warns SET Reason = ? WHERE ServerID = ? AND UserID = ? AND CaseID = ?",
                           (new_reason, interaction.guild.id, member.id, case_id))
                 conn.commit()
