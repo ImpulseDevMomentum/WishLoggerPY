@@ -7,7 +7,6 @@ from nextcord.ui import View
 import sqlite3
 from datetime import datetime, timezone, timedelta
 from typing import List, Tuple
-import yaml
 client = nextcord.Client()
 intents = nextcord.Intents.default()
 intents = nextcord.Intents().all()
