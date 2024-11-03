@@ -2,7 +2,7 @@ To use the Wish bot, start by installing all the dependencies listed in `utils/i
 
 Wish is a public, verified bot and can be run across multiple servers.
 
-Note: The code for Wish was made public after I decided I no longer wanted to maintain it.
+Note: The code for Wish was made public after I decided I no longer wanted to maintain it. I will probably maintain this repository, but whether new features are added will depend on my mental health status.
 
 
 There was an individual, !ja_toxly, who also paid for the VPS where Wish was hosted. However, this person does not have any rights to sell Wish for personal purposes. The entire code was written by me, and I can provide proof - I have all versions of Wish
