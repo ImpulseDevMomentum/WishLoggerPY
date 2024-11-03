@@ -16,7 +16,7 @@ class Invite(commands.Cog):
         )
         embed.add_field(
             name="Invite Link", 
-            value="[Invite Wish](https://discord.com/oauth2/authorize?client_id=1230554087443927060)", 
+            value="Invite Wish", 
             inline=False
         )
         embed.set_footer(text="Thank you for supporting us!")
