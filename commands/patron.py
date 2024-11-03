@@ -18,7 +18,7 @@ class Patron(commands.Cog):
         )
         embed.add_field(
             name="Patreon Link", 
-            value="[Visit our Patreon](https://www.patreon.com/wishdc/membership)", 
+            value="Visit our Patreon", 
             inline=False
         )
         embed.set_footer(text="Thank you for supporting us!")
