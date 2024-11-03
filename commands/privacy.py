@@ -16,7 +16,7 @@ class Privacy(commands.Cog):
         )
         embed.add_field(
             name="Privacy Policy", 
-            value="[View Privacy Policy](https://wishbot.xyz/impulse/Wishpage/Privacy-Policy.html)", 
+            value="View Privacy Policy", 
             inline=False
         )
         embed.set_footer(text="Thank you for your trust!")
