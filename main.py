@@ -1,6 +1,9 @@
 from utils.imports import *
 from utils.token import TOKEN
 
+# From here you can activte your bot
+# Paste your token in utils.token
+# do not change any value here.
 
 intents = nextcord.Intents.default()
 intents.members = True
