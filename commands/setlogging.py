@@ -40,7 +40,6 @@ def update_log_channel(server_id, server_name, log_type, channel_log_id, channel
             WHERE server_id = ?
         ''', (channel_log_id, channel_log_name, server_name, server_id))
     else:
-        # Default case to update all logs
         c.execute('''
             UPDATE servers SET
             role_logs_channel_id = ?, role_logs_channel_name = ?,
