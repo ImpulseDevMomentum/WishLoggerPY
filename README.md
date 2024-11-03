@@ -11,3 +11,6 @@ Wish Logger, better known as Wish, was created to offer Discord users a free, re
 
 Virustotal link: `https://www.virustotal.com/gui/file/4e9d81a2573e612f3d9d575a39a8d6165335c7ecb58e8371ceed56f8636838c2/detection`
 For anything else, please contact me by messaging: `wishbot.contact@gmail.com`
+
+
+Other stuff: https://github.com/lis0ownik/fuzemc
