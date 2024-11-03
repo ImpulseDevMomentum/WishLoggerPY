@@ -16,7 +16,7 @@ class Docs(commands.Cog):
         )
         embed.add_field(
             name="Documentation Link", 
-            value="[View Documentation](https://wish.gitbook.io/wish-docs/)", 
+            value="View Documentation", 
             inline=False
         )
         embed.set_footer(text="Explore and get the most out of Wish!")
