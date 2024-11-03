@@ -16,7 +16,7 @@ class Terms(commands.Cog):
         )
         embed.add_field(
             name="Terms of Service", 
-            value="[View Terms of Service](https://wishbot.xyz/impulse/Wishpage/Terms-of-Service.html)", 
+            value="View Terms of Service", 
             inline=False
         )
         embed.set_footer(text="Thank you for using Wish!")
