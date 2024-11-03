@@ -42,19 +42,18 @@ class RoleEvents(commands.Cog):
             language_strings = await self.get_language_strings(role.guild.id)
             channel_log_id = load_role_logs_channel_id(role.guild.id)
 
-            print(f"Role {role.name} deleted. Attempting to log...")  # Debug log
+            print(f"Role {role.name} deleted. Attempting to log...")
 
             if channel_log_id is not None:
                 log_channel = nextcord.utils.get(role.guild.text_channels, id=int(channel_log_id))
                 if log_channel is not None:
-                    print(f"Found log channel: {log_channel.name} (ID: {log_channel.id})")  # Debug log
-                    for _ in range(3):  # Retry mechanism, attempts 3 times
+                    print(f"Found log channel: {log_channel.name} (ID: {log_channel.id})")
+                    for _ in range(3):
                         async for entry in role.guild.audit_logs(action=nextcord.AuditLogAction.role_delete, limit=1):
-                            print(f"Checking audit log entry: {entry.action}, target: {entry.target}, user: {entry.user}")  # Debug log
-                            if entry.target.id == role.id:  # Compare IDs to ensure the correct role
+                            print(f"Checking audit log entry: {entry.action}, target: {entry.target}, user: {entry.user}")
+                            if entry.target.id == role.id:
                                 moderator = entry.user
-                                print(f"Audit log entry found for role delete by {moderator}")  # Debug log
-
+                                print(f"Audit log entry found for role delete by {moderator}")
                                 embed = nextcord.Embed(title=language_strings.get("ROLE_DELETED_TITLE"), color=nextcord.Color.dark_red())
                                 embed.add_field(name=language_strings.get("ROLE_NAME"), value=role.name, inline=False)
                                 embed.add_field(name=language_strings.get("ROLE_ID"), value=role.id, inline=False)
