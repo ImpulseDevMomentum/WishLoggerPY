@@ -71,7 +71,7 @@ class Snap(commands.Cog):
             data["roles"].append({
                 "name": role.name,
                 "id": role.id,
-                "snap_role_id": role.id,  # Custom identifier to link roles
+                "snap_role_id": role.id,
                 "permissions": role.permissions.value,
                 "color": role.color.value,
                 "hoist": role.hoist,
@@ -83,7 +83,7 @@ class Snap(commands.Cog):
             cat_data = {
                 "name": category.name,
                 "id": category.id,
-                "snap_category_id": category.id,  # Custom identifier to link categories
+                "snap_category_id": category.id,
                 "position": category.position,
                 "nsfw": category.is_nsfw(),
                 "channels": []
@@ -93,7 +93,7 @@ class Snap(commands.Cog):
                 ch_data = {
                     "name": channel.name,
                     "id": channel.id,
-                    "snap_channel_id": channel.id,  # Custom identifier to link channels
+                    "snap_channel_id": channel.id,
                     "type": str(channel.type),
                     "position": channel.position,
                     "topic": channel.topic if isinstance(channel, nextcord.TextChannel) else None,
@@ -113,7 +113,7 @@ class Snap(commands.Cog):
             ch_data = {
                 "name": channel.name,
                 "id": channel.id,
-                "snap_channel_id": channel.id,  # Custom identifier to link channels
+                "snap_channel_id": channel.id,
                 "type": str(channel.type),
                 "position": channel.position,
                 "topic": channel.topic if isinstance(channel, nextcord.TextChannel) else None,
@@ -170,37 +170,29 @@ class Snap(commands.Cog):
         guild = interaction.guild
         member = guild.get_member(interaction.user.id)
 
-        # Check if the user is the server owner
         if member != guild.owner:
             await interaction.response.send_message("Only the server owner can use this command.", ephemeral=True)
             return
 
-        # Get server language (assuming you have a function for this)
         server_language = get_server_language(interaction.guild.id)
         language_file = f'language/{server_language}.json'
 
-        # Load language strings
         with open(language_file, 'r') as file:
             language_strings = json.load(file)
 
-        # Set the snapshot path
         snapshot_dir = "snapshots"
         snapshot_path = os.path.join(snapshot_dir, f"{guild.id}_{name}.json")
 
-        # Check if the snapshot exists
         if not os.path.exists(snapshot_path):
             await interaction.response.send_message(f"No snapshot found with the name `{name}`.", ephemeral=True)
             return
 
-        # Load the snapshot data
         with open(snapshot_path, "r") as f:
             data = json.load(f)
 
-        # Send an initial embed message
         embed = nextcord.Embed(title="Snapshot Build", description="Starting the rebuild process...", color=0xADD8E6)
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
-        # Step 1: Create Categories
         created_categories = {}
         for category_data in data["categories"]:
             category = nextcord.utils.get(guild.categories, id=int(category_data["snap_category_id"]))
@@ -210,9 +202,8 @@ class Snap(commands.Cog):
                     position=category_data["position"]
                 )
                 created_categories[category_data["snap_category_id"]] = category
-                await asyncio.sleep(1)  # Slowmode
+                await asyncio.sleep(1)
 
-        # Step 2: Create Channels
         for category_data in data["categories"]:
             category = created_categories.get(category_data["snap_category_id"])
             for channel_data in category_data["channels"]:
@@ -237,9 +228,8 @@ class Snap(commands.Cog):
                             user_limit=channel_data.get("user_limit", 0),
                             rtc_region=rtc_region_value
                         )
-                    await asyncio.sleep(1)  # Slowmode
+                    await asyncio.sleep(1)
 
-        # Step 3: Create Roles
         for role_data in data["roles"]:
             if not nextcord.utils.get(guild.roles, id=int(role_data["snap_role_id"])):
                 await guild.create_role(
@@ -249,9 +239,8 @@ class Snap(commands.Cog):
                     hoist=role_data["hoist"], 
                     mentionable=role_data["mentionable"]
                 )
-                await asyncio.sleep(1)  # Slowmode
+                await asyncio.sleep(1)
 
-        # Final update of the embed message
         embed.description = "Server rebuilt from snapshot successfully."
         await interaction.followup.send(embed=embed, ephemeral=True)
 
