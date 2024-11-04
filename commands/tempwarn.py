@@ -27,7 +27,7 @@ def generate_unique_case_id():
         conn.close()
 
 def generate_case_id():
-    return random.randint(100, 999)
+    return random.randint(100000, 99999)
 
 def parse_duration(duration_str):
     units = {'s': 1, 'm': 60, 'h': 3600, 'd': 86400}
