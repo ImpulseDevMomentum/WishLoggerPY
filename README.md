@@ -9,7 +9,7 @@ There was an individual, !ja_toxly, who also paid for the VPS where Wish was hos
 from 1.0 to 4.0, along with website files and other content stored on my PC, cloud, USB drives, and laptop.
 Wish Logger, better known as Wish, was created to offer Discord users a free, reliable logging experience. So please, do not buy Wish from them (user @1030566399283826698 - !ja_toxly ) and do not support individuals like them. Instead, you can download Wish from here and enjoy it for free!
 
-Virustotal link: `https://www.virustotal.com/gui/file/4e9d81a2573e612f3d9d575a39a8d6165335c7ecb58e8371ceed56f8636838c2/detection`
+Virustotal link: https://www.virustotal.com/gui/file/4e9d81a2573e612f3d9d575a39a8d6165335c7ecb58e8371ceed56f8636838c2/detection
 For anything else, please contact me by messaging: `wishbot.contact@gmail.com`
 
 
