@@ -13,4 +13,5 @@ Virustotal link: https://www.virustotal.com/gui/file/4e9d81a2573e612f3d9d575a39a
 For anything else, please contact me by messaging: `wishbot.contact@gmail.com`
 
 
-Other stuff: https://github.com/lis0ownik/fuzemc
+FuzeMC: https://github.com/ImpulseDevMomentum/fuzemc
+Wish Logger JS: https://github.com/ImpulseDevMomentum/WishLoggerJS
