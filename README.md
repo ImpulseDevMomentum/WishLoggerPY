@@ -11,4 +11,5 @@ For anything else, please contact me by messaging: `wishbot.contact@gmail.com`
 
 
 FuzeMC: https://github.com/ImpulseDevMomentum/fuzemc <br>
-Wish Logger JS: https://github.com/ImpulseDevMomentum/WishLoggerJS
+Wish Logger JS: https://github.com/ImpulseDevMomentum/WishLoggerJS <br>
+Lumen: https://github.com/ImpulseDevMomentum/Lumen
